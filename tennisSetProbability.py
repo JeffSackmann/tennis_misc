@@ -5,6 +5,9 @@
  
 ## some results:
 ## http://summerofjeff.wordpress.com/2010/12/02/single-set-win-expectancy-tables/
+
+from tennisGameProbability import gameProb
+from tennisTiebreakProbability import tiebreakProb
  
 def fact(x):
     if x in [0, 1]:  return 1
@@ -33,7 +36,7 @@ def setGeneral(s, u, v=0, w=0, tb=1):
     ## given service point (s) or return point (u), and the current
     ## game score (v, w)
     ## get prob of current server winning a service game:
-    g = gameProb(s) ## gameProb is another gist
+    g = gameProb(s)
     ## and current server winning a return game:
     h = gameProb(u)
     ## is set over?
@@ -60,7 +63,7 @@ def setGeneral(s, u, v=0, w=0, tb=1):
     ## special cases, 11 games or more already
     if (v+w) == 12:
         if tb:
-            tp = tiebreakProb(s, u) ## tiebreakProb is another gist
+            tp = tiebreakProb(s, u)
             outcomes['76'] = tp
             outcomes['67'] = 1 - tp
         else:
