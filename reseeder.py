@@ -1,6 +1,8 @@
 import random
 from operator import itemgetter
 
+## todo: reseeder() treats, e.g. seeds 17-32 as equivalent, though grand slam draws assign 17-24 to potential matchups with 9-16 and 25-32 to potential matchups with 1-8. add function parameter for that.
+
 def insertSeedOrNonseed(ndraw, seeds, nonseeds, sj, nj):
     if sj < len(seeds):
         ndraw.append(seeds[sj])
